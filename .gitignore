@@ -1,1 +1,7 @@
 db.sqlite3
+.idea/
+*.pyc
+.DS_Store
+._*
+._.DS_Store
+__pycache__/
