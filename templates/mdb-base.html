@@ -24,10 +24,12 @@
 <body>
 
     {# Navigation #}
+    {% block main_header %}
     <header>
         {% include "includes/mdb-navigation.html" %}
         {% include "includes/mdb-nav-clearfix.html" %}
     </header>
+    {% endblock %}
     {# Navigation #}
 
     {# Main Content #}
@@ -39,11 +41,13 @@
     <!--Main Content-->
 
     <!-- Footer-->
+    {% block main_footer %}
     {# Clearfix to clear the footer #}
     {% include "includes/mdb-nav-clearfix.html" %}
     <footer class="page-footer font-small btg-dark-blue fixed-bottom">
         {% include "includes/mdb-copyright.html" %}
     </footer>
+    {% endblock %}
     <!-- Footer-->
 
 

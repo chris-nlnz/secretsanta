@@ -1,0 +1,51 @@
+{% extends "mdb-base.html" %}
+
+{% load staticfiles %}
+
+{% block main_header %}{# empty header for login page #}{% endblock %}
+
+
+{% block main_content %}
+<div class="row justify-content-center mt-5">
+    <div class="col-4">
+        <!-- Card -->
+        <div class="card">
+            <div class="card-header purple darken-3 white-text">Sign in</div>
+
+            <!-- Card body -->
+            <div class="card-body">
+
+                <img src="{% static 'img/christmas.png' %}" class="mx-auto d-block mb-5"/>
+
+                <!-- Material form register -->
+                <form>
+
+                    <!-- Material input email -->
+                    <div class="md-form">
+                        <i class="fa fa-envelope prefix grey-text"></i>
+                        <input type="email" id="materialFormCardEmailEx" class="form-control">
+                        <label for="materialFormCardEmailEx" class="font-weight-light">Your email</label>
+                    </div>
+
+                    <!-- Material input password -->
+                    <div class="md-form">
+                        <i class="fa fa-lock prefix grey-text"></i>
+                        <input type="password" id="materialFormCardPasswordEx" class="form-control">
+                        <label for="materialFormCardPasswordEx" class="font-weight-light">Your password</label>
+                    </div>
+
+                    <div class="text-center py-4 mt-3">
+                        <button class="btn btn-outline-purple" type="submit">Sign in</button>
+                    </div>
+                </form>
+                <!-- Material form register -->
+
+            </div>
+            <!-- Card body -->
+
+        </div>
+        <!-- Card -->
+    </div>
+
+</div>
+{% endblock %}
