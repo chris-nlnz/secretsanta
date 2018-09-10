@@ -1,4 +1,4 @@
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark btg-dark-blue scrolling-navbar">
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark deep-purple accent-4 scrolling-navbar">
     <a class="navbar-brand" href="{% url 'home' %}">
         <strong>Secret Santa</strong>
     </a>
@@ -20,8 +20,14 @@
                 <a class="nav-link"><i class="fa fa-instagram"></i></a>
             </li>
             {% endcomment %}
-            <li class="nav-item">
-                <a class="nav-link"><i class="fa fa-user-circle"></i></a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="profile-dropdown-link"
+                   data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-user-circle"></i> {{ request.user }}
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="profile-dropdown-link">
+                    <a class="dropdown-item" href="{% url 'logout' %}">logout</a>
+                </div>
             </li>
         </ul>
     </div>

@@ -13,6 +13,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = []  # TODO - set properly
 
+LOGIN_REDIRECT_URL = '/'
 
 # Application definition
 
