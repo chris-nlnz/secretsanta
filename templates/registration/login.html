@@ -16,7 +16,7 @@
             <div class="card-body">
 
                 <img src="{% static 'img/christmas.png' %}" class="mx-auto d-block mb-5"/>
-            
+
                 {% if form.errors %}
                     <p class="text-danger">
                         Your username and password didn't match. Please try again.
@@ -26,6 +26,7 @@
                 <!-- Material form register -->
                 <form method="post" action="{% url 'login' %}">
                     {% csrf_token %}
+                    <input type="hidden" name="next" value="{{ next }}" />
 
                     <!-- Material input email -->
                     <div class="md-form">
@@ -46,6 +47,10 @@
                     </div>
                 </form>
                 <!-- Material form register -->
+
+                {# TODO Forgot Password #}
+                {# Assumes you setup the password_reset view in your URLconf #}
+                {# <p><a href="{% url 'password_reset' %}">Lost password?</a></p> #}
 
             </div>
             <!-- Card body -->
