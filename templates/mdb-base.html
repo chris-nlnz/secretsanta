@@ -1,0 +1,64 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>{% block title %}Secret Santa{% endblock %}</title>
+
+    {# Font Awesome #}{# TODO store locally - why isn't this just using the vendor/mdb one? #}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    {# Bootstrap core CSS #}
+    <link href="{% static 'vendor/mdb/css/bootstrap.min.css' %}" rel="stylesheet">
+    {# Material Design Bootstrap #}
+    <link href="{% static 'vendor/mdb/css/mdb.min.css' %}" rel="stylesheet">
+
+    {# Our custom css #}
+    <link href="{% static 'css/wishlist.css' %}" rel="stylesheet">
+</head>
+
+<body>
+
+    {# Navigation #}
+    <header>
+        {% include "includes/mdb-navigation.html" %}
+        {% include "includes/mdb-nav-clearfix.html" %}
+    </header>
+    {# Navigation #}
+
+    {# Main Content #}
+    <main>
+        <div class="container-fluid">
+            {% block main_content %}{% endblock %}
+        </div>
+    </main>
+    <!--Main Content-->
+
+    <!-- Footer-->
+    {# Clearfix to clear the footer #}
+    {% include "includes/mdb-nav-clearfix.html" %}
+    <footer class="page-footer font-small btg-dark-blue fixed-bottom">
+        {% include "includes/mdb-copyright.html" %}
+    </footer>
+    <!-- Footer-->
+
+
+    <!-- SCRIPTS -->
+    {# JQuery #}
+    <script type="text/javascript" src="{% static 'vendor/mdb/js/jquery-3.3.1.min.js' %}"></script>
+    {# Bootstrap tooltips #}
+    <script type="text/javascript" src="{% static 'vendor/mdb/js/popper.min.js' %}"></script>
+    {# Bootstrap core JavaScript #}
+    <script type="text/javascript" src="{% static 'vendor/mdb/js/bootstrap.min.js' %}"></script>
+    {# MDB core JavaScript #}
+    <script type="text/javascript" src="{% static 'vendor/mdb/js/mdb.min.js' %}"></script>
+
+    {# Our custom js #}
+    <script type="text/javascript" src="{% static 'js/wishlist.js' %}"></script>
+</body>
+
+</html>
