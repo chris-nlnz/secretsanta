@@ -15,12 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path, include
-from wishlist.views import HomeView
+from wishlist.views import HomeView, EventDetailView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
     re_path(r'^$', HomeView.as_view(), name='home'),
+    re_path(r'^event/(?P<pk>\d+)/?$', EventDetailView.as_view(), name='event'),
 
     path('accounts/', include('django.contrib.auth.urls')),
 ]

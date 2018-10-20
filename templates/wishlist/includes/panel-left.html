@@ -9,7 +9,11 @@
                 {% for participation in participations %}
                     <tr>
                         <th>{{ participation.event.date }}</th>
-                        <td><a href="#">{{ participation.event.name }}</a></td>
+                        <td>
+                            <a href="{{ participation.event.get_absolute_url }}">
+                                {{ participation.event.name }}
+                            </a>
+                        </td>
                     </tr>
                 {% endfor %}
                 </tbody>

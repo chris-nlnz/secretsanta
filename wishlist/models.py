@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 from secretsanta.utils import NULLABLE
 
@@ -10,6 +11,9 @@ class Event(models.Model):
 
     def __str__(self):
         return "{}: {} at {}".format(self.date, self.name, self.location)
+
+    def get_absolute_url(self):
+        return reverse('event', args=[self.pk, ])
 
 
 class Participant(models.Model):
