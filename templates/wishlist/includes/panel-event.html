@@ -1,6 +1,31 @@
 <div class="card">
     <div class="card-header btg-blue darken-1 white-text">{{ event }}</div>
     <div class="card-body">
-        <p class="card-text">Event details go here</p>
+        <p class="card-text">
+            <strong>{{ event.name }}</strong><br /> at {{ event.location }} on {{ event.date }}
+        </p>
+
+        {% with event.participant_set.all as people %}
+        {% if people %}
+            <table class="table table-sm table-borderless">
+                <tbody>
+                {% for participation in people %}
+                    <tr>
+                        <td>
+                            <a href="#">
+                                <i class="fa fa-child" aria-hidden="true"></i>&nbsp;
+                                {{ participation.user }}
+                                {% if participation.user == request.user %} (you){% endif %}
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+        {% else %}
+            <p>No participants set up yet.</p>
+        {% endif %}
+        {% endwith %}
     </div>
 </div>
