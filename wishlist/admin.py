@@ -10,7 +10,7 @@ admin.site.register(Event, EventAdmin)
 
 
 class ParticipantAdmin(admin.ModelAdmin):
-    list_display = ('__str__', 'user', 'event', 'buys_present_for')
+    list_display = ('__str__', 'buys_present_for', 'user', 'event')
     ordering = ('event__date', )
 admin.site.register(Participant, ParticipantAdmin)
 
