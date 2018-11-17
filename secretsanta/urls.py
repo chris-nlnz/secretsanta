@@ -15,13 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, re_path, include
-from wishlist.views import HomeView, EventDetailView
+from wishlist.views import HomeView, EventDetailView, simple_draw_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    re_path(r'^$', HomeView.as_view(), name='home'),
-    re_path(r'^event/(?P<pk>\d+)/?$', EventDetailView.as_view(), name='event'),
+    # re_path(r'^$', HomeView.as_view(), name='home'),
+    # re_path(r'^event/(?P<pk>\d+)/?$', EventDetailView.as_view(), name='event'),
+    path('draw/<slug:participant_code>/', simple_draw_view, name='simple_draw'),
 
-    path('accounts/', include('django.contrib.auth.urls')),
+    # path('accounts/', include('django.contrib.auth.urls')),
 ]
