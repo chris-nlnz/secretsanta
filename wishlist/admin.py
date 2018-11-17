@@ -23,7 +23,6 @@ class ParticipantAdmin(admin.ModelAdmin):
         ).format(url)
         return mark_safe(link)
     draw_url.short_description = 'Draw URL'
-
 admin.site.register(Participant, ParticipantAdmin)
 
 
